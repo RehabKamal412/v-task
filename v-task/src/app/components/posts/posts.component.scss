@@ -1,0 +1,31 @@
+.bg-color {
+    background-color: var(--bs-gray-200);
+    margin-top: 0;
+
+    .btn {
+        background-color: var(--bs-primary);
+        color: var(--bs-white);
+        border-color: var(--bs-primary);
+
+    }
+
+    .header {
+
+        &__name
+        {
+            color: var(--bs-primary);
+        }
+    }
+
+    .content,.btn
+    {
+        margin-left: 4.5rem;
+    }
+
+    .card-img
+    {
+        padding-left:15rem;
+    }
+
+}
+

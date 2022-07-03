@@ -1,0 +1,12 @@
+
+.navbar 
+{
+    background-color:var(--bs-primary);
+
+    &-brand, .nav-link , .active
+    {
+        color:var(--bs-white);
+    }
+
+}
+

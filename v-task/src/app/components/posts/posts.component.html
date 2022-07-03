@@ -1,0 +1,61 @@
+<section class="bg-color">
+    <div class="container my-5 py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+
+                    <app-comments [postComment]="comments"></app-comments>
+
+                    <ng-container *ngFor="let post of posts; index as i">
+                         <ng-container *ngFor="let img of images; index as j">                          
+                        <div class="card-body" *ngIf="i===j" >
+                            <div class="d-flex flex-start align-items-center">
+
+
+                                <img class="rounded-circle shadow-1-strong me-3" [src]="img.download_url" alt="avatar"
+                                    width="60" height="60" />
+
+                                <div class="header">
+                                    <h6 class="fw-bold mb-1 header__name">
+                                        {{user.username}}
+                                    </h6>
+                                    <p class="text-muted small mb-0">
+                                       {{user.email}}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="content ms-10">
+                            <p class="m-0 mt-10"> {{post.title}}</p>
+
+                            <p class="mb-3 ms-10  pb-2">
+                                {{post.body | slice: 0:150}}
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <div class="card-img m-auto">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img [src]="img.download_url" class="card-img-top" alt="postImage">
+                            </div>
+
+                            <div>
+                                <!-- <button (click)="showUserComments(post.id)"
+                                    class="btn btn-primary">Comments</button> -->
+                                    <button (click)="showUserComments(post.id)" class="btn btn-primary">Comments</button>
+                            </div>
+                            </div>
+                        </div>
+                        <hr> 
+                        </div>
+                    </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
