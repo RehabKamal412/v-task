@@ -31,20 +31,22 @@ export class CommentsComponent implements OnInit {
     
     this.route.paramMap.subscribe((data) =>{
      this.postId=data.get("id");
-     this.getUserInfo(this.postId);   
-     this.getImages();
     })
-
+    
+    this.getUserInfo();   
+    this.getImages();
     
   }
 
-  getUserInfo(id:number)
+  getUserInfo()
   {
-    this.userService.getUser(id).subscribe((data)=>{
-      this.users=data;
-      console.log(this.users.username);
-      
-  })
+
+    this.userService.userId$.subscribe(id=>{
+      this.userService.getUser(id).subscribe(user=>{
+        this.users= user
+        console.log(this.users);
+      })
+    })
 
 }
 
