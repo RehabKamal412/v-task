@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CommentsComponent } from './components/comments/comments.component';
     PostsComponent,
     HomeComponent,
     CommentsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,11 @@
+@import "../../../sass/component/buttons";
+
+
 .bg-color {
+    
     background-color: var(--bs-gray-200);
     margin-top: 0;
 
-    .btn {
-        background-color: var(--bs-primary);
-        color: var(--bs-white);
-        border-color: var(--bs-primary);
-
-    }
 
     .header {
 
@@ -27,7 +25,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 40%;
     }
 
 }
