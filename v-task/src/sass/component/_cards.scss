@@ -1,0 +1,45 @@
+
+.bg-color {
+    
+    // background-color: var(--bs-gray-200);
+    margin-top: 0;
+
+
+    .header {
+
+        &__name
+        {
+            color: var(--bs-primary);
+        }
+
+        &__mail
+        {
+            color:var(--bs-link-hover-color)
+        }
+    }
+
+    .content,.btn
+    {
+        margin-left: 4.5rem;
+    }
+
+    .card-img
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+
+}
+
+.userName
+{
+    color:var(--bs-primary);
+
+    p{
+        margin-top: 5px;
+        color:#516171;
+    }
+}
+

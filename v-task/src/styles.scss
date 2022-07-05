@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./sass/base/reset";
 @import "./sass/abstract/variables";
-@import "./sass/component/navbar";
-@import "./sass//component/header";
+@import "./sass/layout/navbar";
+@import "./sass/layout/header";
+@import "./sass/component/cards";
 @import "./sass/component/buttons";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
