@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PostsComponent } from './components/posts/posts.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  // { path: '', component: HomeComponent },
   {path:'comments', component:CommentsComponent},
   {path:"posts/:userid", component:PostsComponent},
 
