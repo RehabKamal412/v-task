@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay } from 'rxjs';
+import { catchError, isEmpty, Observable, retry, shareReplay } from 'rxjs';
 import { Comments } from '../models/comments-model';
 
 
@@ -17,5 +17,11 @@ export class UserCommentsService {
   getUserComments(id:number):Observable<Comments[]>
   {
     return this.http.get<Comments[]>("https://jsonplaceholder.typicode.com/comments?postId="+id)
+    .pipe(
+      retry(2),
+      catchError(err=>{
+        throw 'Error occured, please try again. Details :'+ err;
+      })
+    )
   }
 }

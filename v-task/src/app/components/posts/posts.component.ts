@@ -46,12 +46,13 @@ export class PostsComponent implements OnInit {
         this.userId = id
         console.log(id)
       this.postService.getUserPosts(id).subscribe(posts=>{
-        this.posts = posts
-        console.log(this.posts +'posts');
-
+        this.posts = posts;
+        // console.log(this.posts +'posts');
       })
       })
   }
+
+
 
   getImages()
   {
@@ -82,5 +83,5 @@ export class PostsComponent implements OnInit {
         })
   }
 
- 
+
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay, BehaviorSubject } from 'rxjs';
+import { Observable, shareReplay, BehaviorSubject, map, pipe, retry, catchError } from 'rxjs';
 import { Users } from '../models/users';
 
 @Injectable({
@@ -19,6 +19,12 @@ userId$ : BehaviorSubject<number> = new BehaviorSubject<number>(null)
   {
     
       return this.http.get<Users[]>("https://jsonplaceholder.typicode.com/users")
+      .pipe(
+        retry(2),
+        catchError(err=>{
+          throw 'Error occured, please try again. Details :'+ err;
+        })
+      )
       
       
   }
@@ -26,6 +32,12 @@ userId$ : BehaviorSubject<number> = new BehaviorSubject<number>(null)
   getUser(userId:number):Observable<Users>
   {
      return this.http.get<Users>("https://jsonplaceholder.typicode.com/users/"+userId)
+     .pipe(
+      retry(2),
+      catchError(err=>{
+        throw 'Error occured, please try again. Details :'+ err;
+      })
+    )
     
   }
 }
